@@ -47,6 +47,19 @@ class TestAccount(unittest.TestCase):
         self.new_users.delete_account()
         self.assertEqual(len(UserData.users),1)
 
+    def test_find_account(self):
+        """
+        test to check if we can find an account
+        """
+        self.new_users.save_account()
+
+        test_users = UserData("Nina","Wangui","1111")
+        test_users.save_account()
+
+        found_users = UserData.find_account("Nina")
+        self.assertEqual(found_users.firstName,test_users.firstName)
+
+
 
 
 

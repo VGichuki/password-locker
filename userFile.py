@@ -23,3 +23,12 @@ class UserData:
         deletes saved accounts from the users
         """
         UserData.users.remove(self)
+
+    @classmethod
+    def find_account(cls,username):
+        """
+        method that takes in the first name and returns an account that matches the name
+        """
+        for account in cls.users:
+            if account.firstName == username:
+                return account
