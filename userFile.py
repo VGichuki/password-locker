@@ -6,7 +6,7 @@ class UserData:
 
     def __init__(self,firstName,lastName,password):
         """
-        __init__ initialises the attributes of password locker
+        __init__ initialises the attributes of account
         """
         self.firstName = firstName
         self.lastName = lastName
