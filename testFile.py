@@ -14,7 +14,7 @@ class TestAccount(unittest.TestCase):
         """
         #setUp for an account
         self.new_users = UserData("Wangari","Gichuki","0000")
-        
+
         #setUp for credentials
         self.new_credential = Credentials("Twitter","wangari.gichuki","kihujr")
 
@@ -50,6 +50,7 @@ class TestAccount(unittest.TestCase):
         #tearDown for credentials
         Credentials.credentials_list=[]
 
+        #tests for accounts
     def test_delete_account(self):
         """
         test that ensures we can remove an account from the user list
@@ -86,6 +87,15 @@ class TestAccount(unittest.TestCase):
         account_exists = UserData.account_exists("Nina")
 
         self.assertTrue(account_exists)
+
+
+        #test for credentials
+    def test_save_credential(self):
+        """
+        test to check if a user can save credentials
+        """
+        self.new_credential.save_credential()
+        self.assertEqual(len(Credentials.credentials_list),1)
 
 
 
