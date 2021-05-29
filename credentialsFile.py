@@ -51,6 +51,17 @@ class Credentials:
             if credential.site_username == site_username:
                 return credential
 
+    @classmethod
+    def credential_exists(cls,site_username):
+        """
+        checks if credentials exist
+        """
+        for credential in cls.credentials_list:
+            if credential.site_username == site_username:
+                return True
+
+                return False
+
 
 
     

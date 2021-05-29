@@ -136,10 +136,17 @@ class TestAccount(unittest.TestCase):
         found_credential=Credentials.find_credential("valentinevivian")
         self.assertEqual(found_credential.site_username,test_credential.site_username)
 
+    def test_credential_exists(self):
+        """
+        test if the credentials exist
+        """
+        self.new_credential.save_credential()
 
+        test_credential=Credentials("Instagram","valentinevivian","lit254")
+        test_credential.save_credential()
 
-
-
+        existing_credential=Credentials.credential_exists("valentinevivian")
+        self.assertTrue(existing_credential)
 
 
 if __name__ == '__main__':
