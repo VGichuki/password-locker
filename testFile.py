@@ -59,6 +59,21 @@ class TestAccount(unittest.TestCase):
         found_users = UserData.find_account("Nina")
         self.assertEqual(found_users.firstName,test_users.firstName)
 
+    def test_account_exists(self):
+        """
+        test to check if we can return a boolean if we cannot find the account
+        """
+        self.new_users.save_account()
+
+        test_users = UserData("Nina","Wangui","1111") #new account
+        test_users.save_account()
+
+        account_exists = UserData.account_exists("Nina")
+
+        self.assertTrue(account_exists)
+
+
+
 
 
 

@@ -32,3 +32,14 @@ class UserData:
         for account in cls.users:
             if account.firstName == username:
                 return account
+
+    @classmethod
+    def account_exists(cls,username):
+        """
+        method to check if an account exists
+        """
+        for account in cls.users:
+            if account.firstName == username:
+                return True
+
+                return False
