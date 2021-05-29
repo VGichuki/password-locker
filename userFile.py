@@ -17,3 +17,9 @@ class UserData:
         saves account objects into users
         """
         UserData.users.append(self)
+
+    def delete_account(self):
+        """
+        deletes saved accounts from the users
+        """
+        UserData.users.remove(self)

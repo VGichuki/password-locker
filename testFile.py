@@ -28,5 +28,27 @@ class TestAccount(unittest.TestCase):
         self.new_users.save_account()
         self.assertEqual(len(UserData.users),1)
 
+    def tearDown(self):
+        """
+        cleans up the user list which stores accounts
+        """
+        #tearDown for accounts
+        UserData.users=[]
+
+    def test_delete_account(self):
+        """
+        test that ensures we can remove an account from the user list
+        """
+        self.new_users.save_account()
+
+        test_users = UserData("Nina", "Wangui","1111")
+        test_users.save_account()
+
+        self.new_users.delete_account()
+        self.assertEqual(len(UserData.users),1)
+
+
+
+
 if __name__ == '__main__':
     unittest.main()
