@@ -44,7 +44,13 @@ class Credentials:
         deletes the credentials a user does not need
         """
         Credentials.credentials_list.remove(self)
-        
+
+    @classmethod
+    def find_credential(cls,site_username):
+        for credential in cls.credentials_list:
+            if credential.site_username == site_username:
+                return credential
+
 
 
     
