@@ -32,6 +32,13 @@ class Credentials:
         res=''.join(random.choice(Random_password) for i in range(6))
         return res
 
+    @classmethod
+    def display_credentials(cls):
+        """
+        displays the credentials of a user according to the init
+        """
+        return cls.credentials_list
+
 
     
 

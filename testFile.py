@@ -106,6 +106,12 @@ class TestAccount(unittest.TestCase):
         password="RivgpR"
         self.assertEqual(Credentials.generate_password(),password)
 
+    def test_display_credentials(self):
+        """
+        test to check the users credentials
+        """
+        self.assertEqual(Credentials.display_credentials(),Credentials.credentials_list)
+
 
 
 
