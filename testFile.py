@@ -1,4 +1,6 @@
 import unittest #import the unittest module
+import random #import for generating random passwords
+import string #import for inputting passwords
 
 from userFile import UserData #import the UserData class
 from credentialsFile import Credentials #import the Credentials class
@@ -96,6 +98,13 @@ class TestAccount(unittest.TestCase):
         """
         self.new_credential.save_credential()
         self.assertEqual(len(Credentials.credentials_list),1)
+    @unittest.skip("Its working but I would like to see the other passwords")
+    def test_generate_password(self):
+        """
+        test that generates passwords for the user
+        """
+        password="RivgpR"
+        self.assertEqual(Credentials.generate_password(),password)
 
 
 

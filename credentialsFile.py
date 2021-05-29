@@ -1,4 +1,6 @@
 import pyperclip
+import string
+import random
 
 class Credentials:
     """
@@ -20,6 +22,16 @@ class Credentials:
         save credentials of a user in the account
         """
         Credentials.credentials_list.append(self)
+
+    @classmethod
+    def generate_password(cls):
+        """
+        passwords can be generated randomly for the user
+        """
+        Random_password = string.ascii_letters
+        res=''.join(random.choice(Random_password) for i in range(6))
+        return res
+
 
     
 
