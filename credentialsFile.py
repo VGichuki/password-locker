@@ -39,6 +39,13 @@ class Credentials:
         """
         return cls.credentials_list
 
+    def delete_credential(self):
+        """
+        deletes the credentials a user does not need
+        """
+        Credentials.credentials_list.remove(self)
+        
+
 
     
 
