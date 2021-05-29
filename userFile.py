@@ -11,3 +11,9 @@ class UserData:
         self.firstName = firstName
         self.lastName = lastName
         self.password = password
+
+    def save_account(self):
+        """
+        saves account objects into users
+        """
+        UserData.users.append(self)
