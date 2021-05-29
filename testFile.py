@@ -1,5 +1,7 @@
 import unittest #import the unittest module
+
 from userFile import UserData #import the UserData class
+from credentialsFile import Credentials #import the Credentials class
 
 class TestAccount(unittest.TestCase):
     """
@@ -12,14 +14,24 @@ class TestAccount(unittest.TestCase):
         """
         #setUp for an account
         self.new_users = UserData("Wangari","Gichuki","0000")
+        
+        #setUp for credentials
+        self.new_credential = Credentials("Twitter","wangari.gichuki","kihujr")
 
     def test_init(self):
         """
         To check if the data has been initialised properly
         """
+        #initialization for accounts
         self.assertEqual(self.new_users.firstName,"Wangari")
         self.assertEqual(self.new_users.lastName,"Gichuki")
         self.assertEqual(self.new_users.password,"0000")
+
+        #initialization for credentials
+        self.assertEqual(self.new_credential.site,"Twitter")
+        self.assertEqual(self.new_credential.site_username,"wangari.gichuki")
+        self.assertEqual(self.new_credential.site_password,"kihujr")
+
 
     def test_save_account(self):
         """
@@ -34,6 +46,9 @@ class TestAccount(unittest.TestCase):
         """
         #tearDown for accounts
         UserData.users=[]
+
+        #tearDown for credentials
+        Credentials.credentials_list=[]
 
     def test_delete_account(self):
         """
