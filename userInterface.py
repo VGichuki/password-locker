@@ -169,7 +169,29 @@ def Interface():
                         print("Did not get the desired results")
                         print('\n')
 
-                    
+                elif short_code =='dsp':
+                    if display_credential():
+                        list_len=len(Credentials.credentials_list)
+                        print(f"Available credentials...[{list_len}]")
+                        print('\n')
+
+                        for creds in display_credential():
+                            print(f"{creds.site} {creds.site_username}, {creds.site_password}")
+                            print('\n')
+                    else:
+                        print('\n')
+                        print("No credentials match your input")
+                        print('\n')
+                
+                elif short_code =='del':
+                    print("To delete")
+                    print('\n')
+                    print("Choose credentials you want to be deleted")
+
+                    if display_credential():
+                        list_len=len(Credentials.credentials_list)
+                        print()
+
 
 
                 
