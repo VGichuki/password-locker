@@ -183,30 +183,23 @@ def Interface():
                         print("No credentials match your input")
                         print('\n')
                 
-                elif short_code =='del':
-                    print("To delete")
+                elif short_code =='exit':
                     print('\n')
-                    print("Choose credentials you want to be deleted")
+                    print("It was nice having you")
+                    print('\n')
+                    break
 
-                    if display_credential():
-                        list_len=len(Credentials.credentials_list)
-                        print()
+                else:
+                    print('\n')
+                    print("That password does not exist")
+                    print('\n')
 
-
-
-                
-
-
-
-
-
-
-
-                break
-
-
-
-
+            else:
+                print('\n')
+                print("Incorrect login details")
+                print('\n')
+                print("Try again")
+                print('\n')
 
 
 if __name__=='__main__':
