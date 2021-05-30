@@ -96,7 +96,32 @@ def Interface():
     print("Enter your password")
     password_Login=input()
 
-    
+    if account_exists(user_name_log):
+        account_found= find_account(user_name_log)
+        if account_found.firstName == user_name_log and account_found.password == password_Login:
+            print(f"Successfully logged in ...{user_name_log}...")
+            print('\n')
+
+            while True:
+                print(f"Welcome _{firstName}_ to your password locker")
+                print('\n')
+
+                print("Use these short codes to navigate your account")
+                print("crt --Create new credentials")
+                print("str --Store an already existing credential")
+                print("dsp --Display existing credentials")
+                print("del --DElete credentials")
+                print("exit --Exit Password Locker")
+                print("Enter code ____________")
+                short_code=input().lower()
+
+                
+
+
+
+
+
+                break
 
 
 
