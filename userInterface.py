@@ -87,6 +87,20 @@ def Interface():
     print("Create Password......")
     password=input()
 
+    save_account(new_account(firstName,lastName,password))
+    print('\n')
+    print(f"Welcome_{firstName}_. Login to your account")
+
+    print("Enter firstname")
+    user_name_log=input()
+    print("Enter your password")
+    password_Login=input()
+
+    
+
+
+
+
 
 
 if __name__=='__main__':
