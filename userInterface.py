@@ -73,6 +73,12 @@ def find_credential(site_username):
     """
     return Credentials.credential_exists(site_username)
 
+def credential_exists(site_username):
+    """
+    find credentials that are already in the account
+    """
+    return Credentials.credential_exists(site_username)
+
 #userInterface
 def Interface():
     print("Welcome to the password locker app")
@@ -89,7 +95,7 @@ def Interface():
 
     save_account(new_account(firstName,lastName,password))
     print('\n')
-    print(f"Welcome_{firstName}_. Login to your account")
+    print(f"Welcome_{firstName}_. Login to your password locker account")
 
     print("Enter firstname")
     user_name_log=input()
@@ -182,12 +188,49 @@ def Interface():
                         print('\n')
                         print("No credentials match your input")
                         print('\n')
-                
+
+                # elif short_code =='del':
+                #     print("To delete credentials")
+
+                #     if display_credential():
+                #         list_len=len(Credentials.credentials_list)
+                #         print(f"You have the following credentials")
+                #         print('\n')
+
+                #         for creds in display_credential():
+                #             print(f"{creds.site} {creds.site_username}, {creds.site_password}")
+                #             print('\n')
+                #     else:
+                #         print("You dont have credentials saved")
+                #         print('\n')
+
+                #     print("Enter the username to the credential you want deleted")
+                #     search=input()
+                #     if credential_exists(search):
+                #         search_results=find_credential(search)
+                #         print('\n')
+                #         print(f"{search_results.site},{search_results.site_username},{search_results.site_password}")
+                #         print('\n')
+
+                #         print("Enter y/n to delete this credential")
+                #         yes_no=input().lower()
+                #         if yes_no =='y':
+                #             search_results.delete_credential()
+                #             print(f"Sucessfully deleted_{search_results.site_username}_")
+
+                #         else:
+                #             print("Deletion cancelled")
+
+                #     else:
+                #         print("Credential does not exist")
+                #         print('\n')
+
                 elif short_code =='exit':
                     print('\n')
                     print("It was nice having you")
                     print('\n')
                     break
+                    
 
                 else:
                     print('\n')
